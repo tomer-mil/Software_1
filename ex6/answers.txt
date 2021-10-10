@@ -1,0 +1,16 @@
+push: incorrect.
+    counter example: o = null
+    fix: add:
+        @pre o != null
+
+pop: correct!
+
+top: correct!
+
+isEmpty: incorrect.
+    @post condition is incorrect.
+    counter example: elements.size() == 1 //returns false instead of true
+    fix: @post @return == false iff elements.size() > 0
+
+
+
